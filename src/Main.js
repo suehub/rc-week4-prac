@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil';
 import { cartNumState } from './recoil/cart';
 import styled from 'styled-components'; 
 
@@ -31,8 +31,8 @@ const Child1 = () => {
 
 const Child2 = () => {
 
-  const [num, setNum] = useRecoilState(cartNumState);
-  const [name, setName] = useState('');
+  const num = useRecoilValue(cartNumState);
+  const setNum = useSetRecoilState(cartNumState);
 
   return(
       <Wrapper>
@@ -47,14 +47,15 @@ const Child2 = () => {
 
 
 const Wrapper = styled.div` 
-  border: 1px solid red;
+  border: 1px solid #333;
   background-color: white;
   text-align: center;
+
 
   h1{  // styled component 안에서 className, id, tagName 참조 가능
     font-size: 1.5em;
     color: palevioletred;
-    margin-top: 30px;
+
   }
 `;
 
