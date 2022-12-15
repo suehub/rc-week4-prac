@@ -81,7 +81,7 @@ const TitleWrapper = styled.section`
   background: #eee;
   text-align: center;
 
-  .tite{  // styled component 안에서 className, id, tagName 참조 가능
+  .title{  // styled component 안에서 className, id, tagName 참조 가능
     font-size: 1.5em;
     color: #333;
     margin-top: 30p
